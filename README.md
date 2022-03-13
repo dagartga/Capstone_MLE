@@ -228,6 +228,8 @@ Today's Date is in the format of `YYYY/mm/dd`
 
 ## AWS EC2 Instance
 
+**The EC2 Instance has been stopped to reduce costs and so the address will no longer return a prediction**
+
 The docker image was deployed to an [AWS EC2 instance]( https://aws.amazon.com/ec2/) with the following specs:
 
 **Amazon Machine Image:** 
@@ -240,6 +242,8 @@ The docker image was deployed to an [AWS EC2 instance]( https://aws.amazon.com/e
 Within the EC2 instance, the docker image was built and run. By mapping to port 3000 and opening to all traffic, the application can be run using a GET request via the Public IP address:3000/predict.
 
 ## To make a request to my prediction model:
+
+**The EC2 instance has been shutdown to conserve on costs**
 
 First, test that the instance is callable by pasting **ec2-52-53-232-79.us-west-1.compute.amazonaws.com:3000** into the web browser
 
