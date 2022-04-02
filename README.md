@@ -30,7 +30,7 @@ My benchmark for prediction was to take the current daily price of bitcoin and u
 	R – squared: 0.869
 	MAPE: 2.194
 
-## Explorative Data Analysis
+## Exploratory Data Analysis
 
 Initial exploration of the data revealed there were no missing data and no bizarre data points.
 
