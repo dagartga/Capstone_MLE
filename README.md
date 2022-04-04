@@ -30,7 +30,7 @@ My benchmark for prediction was to take the current daily price of bitcoin and u
 	R – squared: 0.869
 	MAPE: 2.194
 
-## Explorative Data Analysis
+## Exploratory Data Analysis
 
 Initial exploration of the data revealed there were no missing data and no bizarre data points.
 
@@ -228,6 +228,8 @@ Today's Date is in the format of `YYYY/mm/dd`
 
 ## AWS EC2 Instance
 
+**The EC2 Instance has been stopped to reduce costs and so the address will no longer return a prediction**
+
 The docker image was deployed to an [AWS EC2 instance]( https://aws.amazon.com/ec2/) with the following specs:
 
 **Amazon Machine Image:** 
@@ -241,11 +243,13 @@ Within the EC2 instance, the docker image was built and run. By mapping to port 
 
 ## To make a request to my prediction model:
 
-First, test that the instance is callable by pasting **ec2-52-53-223-14.us-west-1.compute.amazonaws.com:3000** into the web browser
+**The EC2 instance has been shutdown to conserve on costs**
+
+First, test that the instance is callable by pasting **ec2-52-53-232-79.us-west-1.compute.amazonaws.com:3000** into the web browser
 
 It should return: **Welcome to the BTC Next Day Price Predictor**
 
-Then, call the model by pasting **ec2-52-53-223-14.us-west-1.compute.amazonaws.com:3000/predict** into the web browser
+Then, call the model by pasting **ec2-52-53-232-79.us-west-1.compute.amazonaws.com:3000/predict** into the web browser
 
 Which should return: 
 ```
