@@ -36,33 +36,17 @@ def preprocess_the_data():
         to fit the scaler using MinMaxScaler and RobustScaler
         Then transform the new data using the scaler and retun it as a vector
     """
-
-    from sklearn.preprocessing import MinMaxScaler, RobustScaler
-    from sklearn.pipeline import Pipeline
+    
     from btcinfocharts_scraper import grab_the_data
-
-    # scale the data
-    estimators = [] # create a list for the scalers
-    estimators.append(['minmax', MinMaxScaler()])
-    estimators.append(['robust', RobustScaler()])
-
-    # add the scalers to the Pipeline
-    scale = Pipeline(estimators, verbose=True)
-
-    # get the full dataset
-    df = get_full_dataset()
-
-    # extract the data from the dates of Interval 4
-    date_bool = (df.iloc[:, 0] >= '2013/04/01') & (df.iloc[:, 0] <= '2021/09/01')
-    df = df[date_bool]
-    # drop the date column
-    df = df.drop(columns=['Date'])
-
+    import pickle
+    
+    # get the pickle file scaler
+    infile = open('./scaler/final_scaler.pkl', 'rb')
+    scale = pickle.load(infile)
+    infile.close()
+    
     # get the new dataset for the most recent data
     new_df, todays_date = grab_the_data()
-
-    # fit the scaler to all old data
-    scale.fit(df)
 
     # scale the new data
     transformed_new_data = scale.transform(new_df)
@@ -94,4 +78,3 @@ def prediction():
 
 
 
-prediction()
