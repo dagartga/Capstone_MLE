@@ -15,6 +15,9 @@ today = datetime.strptime(todays_date, '%Y/%m/%d')
 # adjust the date for the next day for more readability of result
 pred_date = today + timedelta(days=1)
 
+# convert to string format
+pred_date = pred_date.strftime('%m/%d/%Y')
+
 st.subheader('BTC Next Day Price Prediction')
 st.subheader('Prediction Date')
 st.write(pred_date)
