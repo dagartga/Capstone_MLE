@@ -22,7 +22,7 @@ st.subheader('BTC Next Day Price Prediction')
 st.subheader('Prediction Date')
 st.write(pred_date)
 st.subheader('Prediction Price (USD)')
-st.write(next_day_pred)
+st.write(next_day_pred[0])
 
 
 
