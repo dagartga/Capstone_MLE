@@ -4,6 +4,8 @@
 
 ## Introduction
 
+View the prediction: https://share.streamlit.io/dagartga/capstone_mle/main
+
 This is the repo for my capstone project for the [Machine Learning Engineer course at Springboard](https://www.springboard.com/courses/ai-machine-learning-career-track). This project originally used data downloaded from the paid Tier 2 of [glassnode.com]( https://glassnode.com). But for the final model the data used was scraped from [bitinfocharts.com](https://bitinfocharts.com/), which is freely available. 
 
 Initial research into journal articles that have done ML on Bitcoin price prediction produced two interesting articles. The first article is [A Self-Adaptive Deep Learning-Based Algorithm for Predictive Analysis of Bitcoin Price]( https://ieeexplore.ieee.org/document/9359745). The second article is [Time-series forecasting of Bitcoin prices using high-dimensional features: a machine learning approach](https://link.springer.com/article/10.1007/s00521-020-05129-6)
@@ -226,39 +228,15 @@ Where `39672.203` is whatever the prediction price is for tomorrow with regard t
 
 Today's Date is in the format of `YYYY/mm/dd`
 
-## AWS EC2 Instance
+## Deployment on Streamlit.io
 
-**The EC2 Instance has been stopped to reduce costs and so the address will no longer return a prediction**
+Streamlit is a platform that allows code to be deployed on the web and returns:
 
-The docker image was deployed to an [AWS EC2 instance]( https://aws.amazon.com/ec2/) with the following specs:
+	- Date of the Predicted Price
+	- Predicted Price
+	- Raw Dataframe Originally Used for Training
 
-**Amazon Machine Image:** 
-	Deep Learning AMI (Amazon Linux 2) Version 57.0 - MXNet-1.8, TensorFlow-2.7, PyTorch-1.10, Neuron, & others. 		NVIDIA CUDA, cuDNN, NCCL, Intel MKL-DNN, Docker, NVIDIA-Docker & EFA support.
+## To make a request to my prediction model by visiting the URL:
 
-**Instance Type:**
-	c5.xlarge with 4 vCPUS and 8 GiB Memory, up to 10 Gigabit Network Performance
-	130 GiB Storage Size
-
-Within the EC2 instance, the docker image was built and run. By mapping to port 3000 and opening to all traffic, the application can be run using a GET request via the Public IP address:3000/predict.
-
-## To make a request to my prediction model:
-
-**The EC2 instance has been shutdown to conserve on costs**
-
-First, test that the instance is callable by pasting **ec2-52-53-232-79.us-west-1.compute.amazonaws.com:3000** into the web browser
-
-It should return: **Welcome to the BTC Next Day Price Predictor**
-
-Then, call the model by pasting **ec2-52-53-232-79.us-west-1.compute.amazonaws.com:3000/predict** into the web browser
-
-Which should return: 
-```
-{
-	"output":
-	{
-	"BTC_next_day_price":"39672.203",
-	"Today's Date":"2022/01/20"
-	}
-}
-```
+https://share.streamlit.io/dagartga/capstone_mle/main
 
