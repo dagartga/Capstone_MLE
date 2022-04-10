@@ -4,17 +4,16 @@ import streamlit as st
 import s3fs
 import os
 import pandas as pd
-import datetime as dt
-from datetime import date, timedelta
+from datetime import datetime, date, timedelta
 from model import prediction
 
 # run the prediction model
 # outputs the next day price prediction and the date of today's data
 next_day_pred, todays_date = prediction()
-today = dt.datetime.strptime(todays_date, '%Y/%m/%d')
+today = datetime.strptime(todays_date, '%Y/%m/%d')
 
 # adjust the date for the next day for more readability of result
-pred_date = todays_date + timedelta(days=1)
+pred_date = today + timedelta(days=1)
 
 st.subheader('BTC Next Day Price Prediction')
 st.subheader('Prediction Date')
