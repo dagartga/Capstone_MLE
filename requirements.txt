@@ -11,3 +11,5 @@ tensorflow==2.7.0
 tensorflow-hub==0.8.0
 numpy==1.21.4
 Flask
+s3fs==2022.3.0
+streamlit==1.8.1
