@@ -10,13 +10,14 @@ from model import prediction
 # run the prediction model
 # outputs the next day price prediction and the date of today's data
 next_day_pred, todays_date = prediction()
+st.write(type(todays_date))
 
 # adjust the date for the next day for more readability of result
-pred_date = todays_date + timedelta(days=1)
+# pred_date = todays_date + timedelta(days=1)
 
 st.subheader('BTC Next Day Price Prediction')
 st.subheader('Prediction Date')
-st.write(pred_date)
+#st.write(pred_date)
 st.subheader('Prediction Price (USD)')
 st.write(next_day_pred)
 
