@@ -34,10 +34,14 @@ try:
 
     with s3.open('btcpricedata/price_df.csv', 'rb') as f:
         df = pd.read_csv(f)
+    
+# narrow down to 1-year data
+    one_year = df.iloc[-365:, :]
 
 # Print results
     st.subheader('1 Year Historical Prices and Predictions')
-    st.write(df.iloc[-365:, :])
+    st.line_chart(one_year.loc[['next_day_price', 'next_day_pred']])
+    st.write(one_year)
 
 except Exception as e:
     st.write(e)
