@@ -36,8 +36,8 @@ try:
         df = pd.read_csv(f)
 
 # Print results
-    st.subheader('Historical Prices and Predictions')
-    st.write(df)
+    st.subheader('1 Year Historical Prices and Predictions')
+    st.write(df.iloc[-365:, :])
 
 except Exception as e:
     st.write(e)
