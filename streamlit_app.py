@@ -32,11 +32,11 @@ try:
 # Retrieve file contents
     s3 = s3fs.S3FileSystem(anon=False)
 
-    with s3.open('btcpricedata/Merged_Unconverted_BTC_Data.csv', 'rb') as f:
+    with s3.open('btcpricedata/price_df.csv', 'rb') as f:
         df = pd.read_csv(f)
 
 # Print results
-    st.subheader('Raw Data')
+    st.subheader('Historical Prices and Predictions')
     st.write(df)
 
 except Exception as e:
