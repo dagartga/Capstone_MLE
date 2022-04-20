@@ -40,7 +40,7 @@ try:
 
 # Print results
     st.subheader('1 Year Historical Prices and Predictions')
-    st.line_chart(one_year.loc[['next_day_price', 'next_day_pred']])
+    st.line_chart(one_year.iloc[:, 2:])
     st.write(one_year)
 
 except Exception as e:
