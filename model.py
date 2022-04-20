@@ -36,15 +36,13 @@ def preprocess_the_data():
         to fit the scaler using MinMaxScaler and RobustScaler
         Then transform the new data using the scaler and retun it as a vector
     """
-    
+
     from btcinfocharts_scraper import grab_the_data
-    import pickle
-    
-    # get the pickle file scaler
-    infile = open('./scaler/final_scaler.pkl', 'rb')
-    scale = pickle.load(infile)
-    infile.close()
-    
+    import joblib
+
+    # load the scaler
+    scale = joblib.load('./scaler/scaler.save') 
+
     # get the new dataset for the most recent data
     new_df, todays_date = grab_the_data()
 
@@ -75,6 +73,3 @@ def prediction():
     pred_next_day_price = ann_model.predict(current_scaled_data)
 
     return pred_next_day_price, todays_date
-
-
-
