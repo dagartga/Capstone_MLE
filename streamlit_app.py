@@ -37,10 +37,13 @@ try:
     
 # narrow down to 1-year data
     one_year = df.iloc[-365:, :]
+    
+# create date as index
+    one_year = one_year.set_index('Date')
 
 # Print results
     st.subheader('1 Year Historical Prices and Predictions')
-    st.line_chart(one_year.iloc[:, 2:])
+    st.line_chart(one_year.iloc[:, 1:])
     st.write(one_year)
 
 except Exception as e:
