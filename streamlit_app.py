@@ -7,7 +7,6 @@ import pandas as pd
 from datetime import datetime, date, timedelta
 from model import prediction
 import traceback
-import plotly.express as px
 
 
 try:
