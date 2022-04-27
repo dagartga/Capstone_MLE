@@ -35,14 +35,14 @@ try:
 
     with s3.open('btcpricedata/price_df.csv', 'rb') as f:
         df = pd.read_csv(f)
-    
-# narrow down to 1-year data and create plotly figure
-    fig = px.line(df.iloc[-365:, :], x='Date', y=df.columns[-2:])
+        
+# narrow down to 1-year data
+    one_year = df.iloc[-365:, :]
 
 
 # Print results
     st.subheader('1 Year Historical Prices and Predictions')
-    st.plotly_chart(fig)
+    st.line_chart(one_year.iloc[:, 2:])
     st.write(one_year)
 
 except Exception as e:
