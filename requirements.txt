@@ -13,3 +13,5 @@ numpy==1.21.4
 Flask
 s3fs==2022.3.0
 streamlit==1.8.1
+joblib
+plotly
