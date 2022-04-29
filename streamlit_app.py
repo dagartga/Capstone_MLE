@@ -43,7 +43,6 @@ try:
 # Print results
     st.subheader('1 Year Historical Prices and Predictions')
     st.plotly_chart(fig)
-    st.write(one_year)
 
 except Exception as e:
     st.write(e)
