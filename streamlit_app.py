@@ -37,12 +37,18 @@ try:
         df = pd.read_csv(f)
 
 # narrow down to 1-year data and create plotly figure
-    fig = px.line(df.iloc[-365:, :], x='Date', y=df.columns[-2:])
+    one_year_df = df.iloc[-365:, :]
+    fig = px.line(one_year_df, x='Date', y=df.columns[-2:])
 
 
-# Print results
+# Print plot of Predictions and next day actual prices
     st.subheader('1 Year Historical Prices and Predictions')
     st.plotly_chart(fig)
 
+# price and prediction raw data printed in tabular form
+    st.subheader('1 Year Historical Prices and Predictions DataFrame')
+    st.write(one_year_df)
+
+    
 except Exception as e:
     st.write(e)
