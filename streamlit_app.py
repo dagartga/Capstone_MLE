@@ -15,7 +15,7 @@ try:
     s3 = s3fs.S3FileSystem(anon=False)
 
     with s3.open('btcpricedata/price_df.csv', 'rb') as f:
-        df = pd.read_csv(f, index_col=0)
+        df = pd.read_csv(f)
 
     todays_date = df.iloc[-1, 0]
     next_day_pred = str(df.iloc[-1, 3])
