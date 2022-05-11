@@ -43,7 +43,7 @@ From those 100 features, **Variance Inflation Factor** analysis was used to take
 
 From those 20 features, they were analyzed in a **Correlation Matrix** to narrow down to only features that were not cross correlated. From the Correlation Matrix analysis, price3trxUSD and price7rsiUSD were removed because they had over 0.75 correlation with at least one other feature.
 
-<img src="images/Correlation_Matrix.png" alt="Correlation Matrix for 20 features"/>
+<img src="./Correlation_Matrix.png" alt="Correlation Matrix for 20 features"/>
 
 
 # Testing different model types
