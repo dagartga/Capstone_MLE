@@ -9,6 +9,13 @@ from datetime import date, timedelta
 import traceback
 import plotly.express as px
 
+# Custom imports
+from multipage import MultiPage
+from pages import project_description # import your pages here
+
+# Create an instance of the app
+app = MultiPage()
+
 
 try:
 
@@ -57,3 +64,10 @@ try:
 
 except Exception as e:
     st.write(e)
+
+
+# Add all your application here
+app.add_page("Project Description", project_description.app)
+
+# run the main app
+app.run()
