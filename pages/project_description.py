@@ -245,5 +245,5 @@ corr_image = Image.open('./pages/Correlation_Matrix.png')
 
 def app():
     st.markdown(readme_string_1)
-	st.image(corr_image, caption='Correlation Matrix of the Top 20 Features')
-	st.markdown(readme_string_2)
+    st.image(corr_image, caption='Correlation Matrix of the Top 20 Features')
+    st.markdown(readme_string_2)
