@@ -1,8 +1,8 @@
 import streamlit as st
+from PIL import Image
 
 
-
-readme_string = """
+readme_string_1 = """
 ### This project is for educational purposes only and should not be used as investment advice.
 
 ## Introduction
@@ -42,10 +42,11 @@ For feature selection, **Random Forest Regression Feature Importance**, **Varian
 From those 100 features, **Variance Inflation Factor** analysis was used to take the 20 features with the lowest VIF scores.
 
 From those 20 features, they were analyzed in a **Correlation Matrix** to narrow down to only features that were not cross correlated. From the Correlation Matrix analysis, price3trxUSD and price7rsiUSD were removed because they had over 0.75 correlation with at least one other feature.
+"""
 
-<img src="./Correlation_Matrix.png" alt="Correlation Matrix for 20 features"/>
+# INSERT CORRELATION MATRIX IMAGE HERE
 
-
+readme_string_2 = """
 # Testing different model types
 
 ## Polynomial Regression prototype
@@ -239,6 +240,10 @@ Streamlit is a platform that allows code to be deployed on the web and returns:
 
 """
 
+corr_image = Image.open('./pages/Correlation_Matrix.png')
+
 
 def app():
-    st.markdown(readme_string)
+    st.markdown(readme_string_1)
+	st.image(corr_image, caption='Correlation Matrix of the Top 20 Features')
+	st.markdown(readme_string_2)
