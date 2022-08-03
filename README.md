@@ -4,8 +4,6 @@
 
 ## Introduction
 
-View the prediction: https://share.streamlit.io/dagartga/capstone_mle/main
-
 This is the repo for my capstone project for the [Machine Learning Engineer course at Springboard](https://www.springboard.com/courses/ai-machine-learning-career-track). This project originally used data downloaded from the paid Tier 2 of [glassnode.com]( https://glassnode.com). But for the final model the data used was scraped from [bitinfocharts.com](https://bitinfocharts.com/), which is freely available. 
 
 Initial research into journal articles that have done ML on Bitcoin price prediction produced two interesting articles. The first article is [A Self-Adaptive Deep Learning-Based Algorithm for Predictive Analysis of Bitcoin Price]( https://ieeexplore.ieee.org/document/9359745). The second article is [Time-series forecasting of Bitcoin prices using high-dimensional features: a machine learning approach](https://link.springer.com/article/10.1007/s00521-020-05129-6)
@@ -238,5 +236,5 @@ Streamlit is a platform that allows code to be deployed on the web and returns:
 
 ## To make a request to my prediction model by visiting the URL:
 
-https://share.streamlit.io/dagartga/capstone_mle/main
+**This website is no longer active** https://share.streamlit.io/dagartga/capstone_mle/main
 
