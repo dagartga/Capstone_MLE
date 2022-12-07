@@ -234,7 +234,7 @@ Streamlit is a platform that allows code to be deployed on the web and returns:
 	- Predicted Price
 	- Raw Dataframe Originally Used for Training
 
-## To make a request to my prediction model by visiting the URL:
+## ~~To make a request to my prediction model by visiting the URL:~~
 
-**This website is no longer active** https://share.streamlit.io/dagartga/capstone_mle/main
+~~https://share.streamlit.io/dagartga/capstone_mle/main~~
 
